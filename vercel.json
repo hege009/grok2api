@@ -1,0 +1,23 @@
+﻿{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
+  ],
+  "env": {
+    "TZ": "Asia/Shanghai",
+    "LOG_LEVEL": "INFO",
+    "LOG_FILE_ENABLED": "false",
+    "ACCOUNT_STORAGE": "local",
+    "DATA_DIR": "/tmp/grok2api-data",
+    "LOG_DIR": "/tmp/grok2api-logs"
+  }
+}
